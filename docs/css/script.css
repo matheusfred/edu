@@ -1,0 +1,78 @@
+body{ 
+	background-color: black !important;
+	background-image: url(../img/body_bg.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+h5{font-size: 15px !important; margin-bottom: 2px !important;}
+h6{font-size: 12px !important; color:#555555 !important;}
+
+.nopadding{padding-right: 0px !important;padding-left: 0px !important;}
+
+/* MENU CONFIG CSS */
+.menu_logo img{margin-bottom: 20px;}
+.menu_logo{	border-bottom: 1px solid #343434; margin-bottom: 5px;}
+
+.selected{ color:white !important; transition: 0.5s  linear all; }
+
+.content_menu{
+	padding: 20px;
+	background-color: #222222;
+	color:#A3A3A3;
+	border-top: 0px;
+	border-right: 1px solid #343434;
+	border-left: 1px solid #343434;
+	font-family: 'PT Sans Narrow', 'Helvetica Neue', 'Verdana', sans-serif !important;
+	z-index: 3;
+}
+
+ul{list-style: none;padding: 0px;}
+
+.menu-item{
+	margin-bottom: 5px;
+	border-bottom: 1px solid #343434;
+	cursor: pointer;
+}
+
+.social-networks {text-align: center;}
+.social-networks a{
+    font-size: 22px;
+    color: #D2D2D2;
+} .social-networks a:hover{color:white;}
+
+.menu_arrow{
+	height: 85px;
+	background-image: url(../img/menu_arrow.png);
+}
+
+/* PÁGINAS CONFIG CSS */
+
+.pagebox{
+	height: 650px;
+	color:#A3A3A3;
+	opacity: 0.8;
+	margin-top: 5px;
+	background-color: #222222;
+	border: 1px solid #343434;
+}
+
+/* TRANSIÇÃO DE PÁGINAS */
+
+.transition.ng-enter {
+  transition: 0.5s linear all;
+  opacity:0;
+}
+.transition.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.fixer-baixo{
+	border-bottom: 60px solid transparent;
+	border-right: 90px solid #222222;
+}
+.fixer-baixo1{
+	border-bottom: 60px solid transparent;
+	border-left: 90px solid #222222;
+}
+

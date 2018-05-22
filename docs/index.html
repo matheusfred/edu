@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html ng-app="moduleApp">
+	<head>
+		<title>Edu Tatto</title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- CSS LIBS -->
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" href="css/script.css" />
+		<link rel="stylesheet" href="lib/slick-carousel/slick/slick.css"/>
+		<link rel="stylesheet" href="lib/slick-carousel/slick/slick-theme.css"/>
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+	</head>
+
+	<body ng-controller="indexCtrl">
+		<div class="container">
+			<div class="row">
+				<!-- NAVBAR -->
+				<div class="col-md-3">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="content_menu">
+								<div class="menu_logo">
+									<img src="img/logo.png" class="img-fluid" alt="">
+								</div>
+								<ul>
+									<li class="menu-item" ui-sref="index" 
+										ng-class="{selected: statusmenu === 'home'}"
+										ng-click="changeStatus('home')">
+										<h5>HOME</h5>
+										<h6>Retornar para Homepage.</h6>
+									</li>
+									<li class="menu-item" ui-sref="sobre" 
+										ng-class="{selected: statusmenu === 'sobre'}" 
+										ng-click="changeStatus('sobre')">
+										<h5>SOBRE</h5>
+										<h6>Tudo sobre nosso studio.</h6>
+									</li>
+									<li class="menu-item" ui-sref="galeria"
+										ng-class="{selected: statusmenu === 'galeria'}" 
+										ng-click="changeStatus('galeria')">
+										<h5>GALERIA</h5>
+										<h6>Alguns trabalhos.</h6>
+									</li>
+									<li class="menu-item" ui-sref="contato"
+										ng-class="{selected: statusmenu === 'contato'}" 
+										ng-click="changeStatus('contato')">
+										<h5>CONTATO</h5>
+										<h6>Entre em contato agora!</h6>
+									</li>
+								</ul>
+								<div class="social-networks">
+									<a href="https://www.facebook.com/EduAdriaoTattoo/" title="Facebook" target="blank">
+										<i class="fa fa-facebook-square"></i>
+									</a>
+									<a href="https://www.instagram.com/eduadriaotattoo/" title="Instagram" target="blank">
+										<i class="fa fa-instagram"></i>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-12 menu_arrow nopadding">
+								
+							</div>
+						</div>	
+					</div>
+				</div>
+
+				
+				<!-- VIEW'S -->
+				<div class="transition col-md-9" ui-view>
+				</div>
+
+				<!-- SCRIPT LIBS -->
+				<script src="lib/angular/angular.min.js"></script>
+				<script src="lib/jquery/dist/jquery.min.js"></script>
+				<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>	
+				<script src="lib/slick-carousel/slick/slick.js"></script>
+		    	<script src="lib/angular-slick-carousel/dist/angular-slick.min.js"></script>
+		    	<script src="lib/angular-animate/angular-animate.min.js"></script>
+		    	<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+				<!-- ANGULAR CONTROLLERS -->
+				<script src="js/app.js"></script>
+				<script src="js/routes.js"></script>
+				<script src="js/controller/indexCtrl.js"></script>		
+
+				<!-- T E M P L A T E S / L A Y O U T S -->
+					<!-- HOME -->
+				<script type="text/ng-template" id="/home.html">
+					<section>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								
+							</div>
+						</div>				
+					</section>	
+				</script>
+
+					<!-- SOBRE NÓS -->
+				<script type="text/ng-template" id="/sobre.html">
+					<section>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+								<h1>SOBRE</h1>
+							</div>
+						</div>				
+					</section>	
+				</script>
+
+					<!-- GALERIA -->
+				<script type="text/ng-template" id="/galeria.html">
+					<section>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+								<h1>GALERIA</h1>
+							</div>
+						</div>				
+					</section>	
+				</script>
+
+					<!-- CONTATO -->
+				<script type="text/ng-template" id="/contato.html">
+					<section>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+								<h1>CONTATO</h1>
+							</div>
+						</div>				
+					</section>	
+				</script>									
+			</div>
+		</div>
+	</body>
+</html>
