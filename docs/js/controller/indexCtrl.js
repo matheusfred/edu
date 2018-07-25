@@ -7,7 +7,6 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('indexCtrl', function($scope, $location, $http){
-
 	var newValue;
 	$scope.statusmenu = 'home';	
 
@@ -15,4 +14,58 @@ moduleApp.controller('indexCtrl', function($scope, $location, $http){
 		$scope.statusmenu =  newValue;
 	};
 
+  $scope.callCarouselHome = function(){
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          autoplay:true,
+          autoplayTimeout:2500,
+          responsive:{
+              1200:{
+                  items:1
+              }
+          }
+      })
+    });
+  };
+
+  $scope.callCarouselHome();
+
+	$scope.callCarouselSobre = function(){
+		$(document).ready(function(){
+			$('.owl-carousel').owlCarousel({
+			    loop:true,
+			    margin:10,
+    			autoplay:true,
+    			autoplayTimeout:2500,
+			    responsive:{
+			        1200:{
+			            items:1
+			        }
+			    }
+			})
+		});
+	};
+
+	$scope.callCarousel = function(){
+		$(document).ready(function(){
+			$('.owl-carousel').owlCarousel({
+			    loop:true,
+			    margin:10,
+			    nav:true,
+			    responsive:{
+			        0:{
+			            items:1
+			        },
+			        600:{
+			            items:3
+			        },
+			        1000:{
+			            items:5
+			        }
+			    }
+			})
+		});
+	};
 });  

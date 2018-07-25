@@ -9,10 +9,15 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 		<link rel="stylesheet" href="css/script.css" />
-		<link rel="stylesheet" href="lib/slick-carousel/slick/slick.css"/>
-		<link rel="stylesheet" href="lib/slick-carousel/slick/slick-theme.css"/>
 		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
+		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.green.min.css" />
+		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />
+
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVUDHXfEOuwQHetEBOd4azpVzE9Ns5u00">
+		</script>		
 	</head>
 
 	<body ng-controller="indexCtrl">
@@ -23,46 +28,43 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="content_menu">
-								<div class="menu_logo">
-									<img src="img/logo.png" class="img-fluid" alt="">
-								</div>
+								<img src="img/logo2.png" class="img-fluid" alt="">
 								<ul>
 									<li class="menu-item" ui-sref="index" 
 										ng-class="{selected: statusmenu === 'home'}"
-										ng-click="changeStatus('home')">
-										<h5>HOME</h5>
+										ng-click="changeStatus('home');callCarouselHome();">
+										<h5>Home</h5>
 										<h6>Retornar para Homepage.</h6>
 									</li>
 									<li class="menu-item" ui-sref="sobre" 
 										ng-class="{selected: statusmenu === 'sobre'}" 
-										ng-click="changeStatus('sobre')">
-										<h5>SOBRE</h5>
-										<h6>Tudo sobre nosso studio.</h6>
+										ng-click="changeStatus('sobre');callCarouselSobre();">
+										<h5>Sobre</h5>
+										<h6>Tudo sobre o studio.</h6>
 									</li>
 									<li class="menu-item" ui-sref="galeria"
 										ng-class="{selected: statusmenu === 'galeria'}" 
-										ng-click="changeStatus('galeria')">
-										<h5>GALERIA</h5>
+										ng-click="changeStatus('galeria');">
+										<h5>Galeria</h5>
 										<h6>Alguns trabalhos.</h6>
 									</li>
 									<li class="menu-item" ui-sref="contato"
 										ng-class="{selected: statusmenu === 'contato'}" 
-										ng-click="changeStatus('contato')">
-										<h5>CONTATO</h5>
+										ng-click="changeStatus('contato');initMap();">
+										<h5>Contato</h5>
 										<h6>Entre em contato agora!</h6>
 									</li>
 								</ul>
-								<div class="social-networks">
+							</div>
+							<div class="col-md-12 menu_arrow nopadding">
+								<div class="rede-sociais">
 									<a href="https://www.facebook.com/EduAdriaoTattoo/" title="Facebook" target="blank">
 										<i class="fa fa-facebook-square"></i>
 									</a>
 									<a href="https://www.instagram.com/eduadriaotattoo/" title="Instagram" target="blank">
 										<i class="fa fa-instagram"></i>
 									</a>
-								</div>
-							</div>
-							<div class="col-md-12 menu_arrow nopadding">
-								
+								</div>								
 							</div>
 						</div>	
 					</div>
@@ -70,42 +72,67 @@
 
 				
 				<!-- VIEW'S -->
-				<div class="transition col-md-9" ui-view>
-				</div>
+				<div class="transition col-md-8" ui-view></div>
 
 				<!-- SCRIPT LIBS -->
 				<script src="lib/angular/angular.min.js"></script>
 				<script src="lib/jquery/dist/jquery.min.js"></script>
 				<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>	
-				<script src="lib/slick-carousel/slick/slick.js"></script>
-		    	<script src="lib/angular-slick-carousel/dist/angular-slick.min.js"></script>
+		    	<script src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
 		    	<script src="lib/angular-animate/angular-animate.min.js"></script>
 		    	<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 
 				<!-- ANGULAR CONTROLLERS -->
 				<script src="js/app.js"></script>
 				<script src="js/routes.js"></script>
-				<script src="js/controller/indexCtrl.js"></script>		
+				<script src="js/controller/indexCtrl.js"></script>	
+				<script src="js/controller/contactCtrl.js"></script>	
 
 				<!-- T E M P L A T E S / L A Y O U T S -->
 					<!-- HOME -->
 				<script type="text/ng-template" id="/home.html">
 					<section>
 						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12">
-								
-							</div>
-						</div>				
+							<div class="col-md-1"></div>
+							<div class="owl-carousel col-md-10 vcenter">
+								<img src="img/tattoos/tattoo1.png" class="item" alt="">
+								<img src="img/tattoos/tattoo2.png" class="item" alt="">	
+								<img src="img/tattoos/tattoo3.png" class="item" alt="">	
+							</div>									
+						</div>			
 					</section>	
 				</script>
 
 					<!-- SOBRE NÓS -->
 				<script type="text/ng-template" id="/sobre.html">
 					<section>
-						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
-								<h1>SOBRE</h1>
-							</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox sobre" id="seletor-teste">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-6">
+											<h1>O Estúdio</h1>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis consequat tempus. Maecenas quis lobortis massa. Morbi mi enim, mattis at sem vitae, fermentum sollicitudin ipsum. Duis interdum elit nibh, eu interdum ante venenatis et. Aliquam erat volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>	
+										</div>
+										<div class="owl-carousel col-md-6 vcenter">
+											<img src="img/studio1.jpg" class="item img-fluid rounded" alt="">
+											<img src="img/studio2.jpg" class="item img-fluid rounded" alt="">		
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-6 vcenter">
+											<img src="img/details.jpg" class="img-fluid rounded" alt="">
+										</div>					
+										<div class="col-md-6">
+											<h1>Sobre</h1>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis consequat tempus. Maecenas quis lobortis massa. Morbi mi enim, mattis at sem vitae, fermentum sollicitudin ipsum. Duis interdum elit nibh, eu interdum ante venenatis et. Aliquam erat volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>	
+										</div>																				
+									</div>
+								</div>	
+							</div>								
 						</div>				
 					</section>	
 				</script>
@@ -113,10 +140,23 @@
 					<!-- GALERIA -->
 				<script type="text/ng-template" id="/galeria.html">
 					<section>
-						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
-								<h1>GALERIA</h1>
-							</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+							<div class="row">
+								<div class="owl-carousel owl-theme">
+								    <div class="item"><h4>1</h4></div>
+								    <div class="item"><h4>2</h4></div>
+								    <div class="item"><h4>3</h4></div>
+								    <div class="item"><h4>4</h4></div>
+								    <div class="item"><h4>5</h4></div>
+								    <div class="item"><h4>6</h4></div>
+								    <div class="item"><h4>7</h4></div>
+								    <div class="item"><h4>8</h4></div>
+								    <div class="item"><h4>9</h4></div>
+								    <div class="item"><h4>10</h4></div>
+								    <div class="item"><h4>11</h4></div>
+								    <div class="item"><h4>12</h4></div>
+								</div>								
+							</div>	
 						</div>				
 					</section>	
 				</script>
@@ -124,11 +164,27 @@
 					<!-- CONTATO -->
 				<script type="text/ng-template" id="/contato.html">
 					<section>
-						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
-								<h1>CONTATO</h1>
-							</div>
-						</div>				
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox contato">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-12">
+											<div id="map"></div>
+										</div>										
+										<div class="col-md-6">
+											<i class="fa fa-mobile" aria-hidden="true"></i>
+											<h2>+55 (12) 99727-9679</h2>
+											<p>Celular</p>
+										</div>							
+										<div class="col-md-6">
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<h2></h2>
+											<p>Email</p>
+										</div>
+									</div>												
+								</div>
+							</div>	
+						</div>			
 					</section>	
 				</script>									
 			</div>

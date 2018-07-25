@@ -23,6 +23,7 @@ moduleApp.config(function($stateProvider) {
     })
     .state('contato', {
       url: "/contato",
-      templateUrl: '/contato.html'
+      templateUrl: '/contato.html',
+      controller: 'contactCtrl'
     })   
 });

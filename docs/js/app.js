@@ -7,3 +7,5 @@
 /*
 /* ****************************************************** */
 var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router']);
+
+moduleApp.run(["$state",function($state){$state.go('index');}]);

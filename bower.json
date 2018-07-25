@@ -19,6 +19,6 @@
     "jquery": "latest",
     "angular-animate": "^1.6.6",
     "angular-translate": "^2.17.0",
-    "angular-loading-bar": "latest" 
+    "owl.carousel": "^2.3.4"
   }
 }
