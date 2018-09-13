@@ -7,6 +7,18 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('indexCtrl', function($scope, $location, $http){
+
+  // var config = {
+  //   apiKey: "AIzaSyA_Pi0skdiVRJb3pDGqC-ADC7SPCuWtWv0",
+  //   authDomain: "edutatto-1530661509405.firebaseapp.com",
+  //   databaseURL: "https://edutatto-1530661509405.firebaseio.com",
+  //   projectId: "edutatto-1530661509405",
+  //   storageBucket: "edutatto-1530661509405.appspot.com",
+  //   messagingSenderId: "648067521116"
+  // };
+
+  // firebase.initializeApp(config);	
+
 	var newValue;
 	$scope.statusmenu = 'home';	
 
@@ -22,50 +34,28 @@ moduleApp.controller('indexCtrl', function($scope, $location, $http){
           autoplay:true,
           autoplayTimeout:2500,
           responsive:{
-              1200:{
-                  items:1
-              }
+            1200:{
+              items:1
+            },
+            1024:{
+              items:1
+            },
+            768:{
+              items:1
+            },
+            425:{
+              items:1
+            },
+            375:{
+              items:1
+            },
+            320:{
+              items:1
+            }
           }
       })
     });
   };
 
   $scope.callCarouselHome();
-
-	$scope.callCarouselSobre = function(){
-		$(document).ready(function(){
-			$('.owl-carousel').owlCarousel({
-			    loop:true,
-			    margin:10,
-    			autoplay:true,
-    			autoplayTimeout:2500,
-			    responsive:{
-			        1200:{
-			            items:1
-			        }
-			    }
-			})
-		});
-	};
-
-	$scope.callCarousel = function(){
-		$(document).ready(function(){
-			$('.owl-carousel').owlCarousel({
-			    loop:true,
-			    margin:10,
-			    nav:true,
-			    responsive:{
-			        0:{
-			            items:1
-			        },
-			        600:{
-			            items:3
-			        },
-			        1000:{
-			            items:5
-			        }
-			    }
-			})
-		});
-	};
 });  

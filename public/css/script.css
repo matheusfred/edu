@@ -2,10 +2,8 @@ html{
 	overflow:initial;
 }
 body{ 
-	background-color: black !important;
-	background-image: url(../img/body_wood.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
+	background-image: url(../img/bg/dark_mosaico.png);
+	background-repeat: repeat;
 }
 
 h1{color:white !important;}
@@ -48,13 +46,13 @@ ul{list-style: none;padding: 0px;}
 
 .menu_arrow{
 	height: 85px;
-	background-image: url(../img/menu_arrow.png);
+	background-image: url(../img/arrow.png);
 }
 
 /* PÁGINAS CONFIG CSS */
 
 .pagebox{
-	height: 600px;
+	min-height: 600px;
 	color:#A3A3A3;
 	padding: 20px;
 	background-color: rgba(34,34,34,0.8);
@@ -89,3 +87,18 @@ ul{list-style: none;padding: 0px;}
 	border-left: 90px solid #222222;
 }
 
+/****** TABLET ******/
+@media only screen and (max-width: 1024px) {
+	.menu_arrow{height: 85px;background-image: url(../img/arrow-tablet.png);}	
+}	
+
+@media only screen and (max-width: 768px) {
+    .adjust_margin{margin-top: 50px;}
+}	 
+
+/****** MOBILE ******/
+@media only screen and (max-width: 450px) {
+	.hidden-mobile{display: none;}
+	.content_menu li:last-child{border:none;}
+	.menu_arrow{height: 30px; background-image: none;border-top: 1px solid #343434}
+}	

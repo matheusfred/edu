@@ -15,15 +15,31 @@ moduleApp.config(function($stateProvider) {
     }) 
     .state('sobre', {
       url: "/sobre",
-      templateUrl: '/sobre.html'
+      templateUrl: '/sobre.html',
+      controller: 'aboutCtrl'
     })  
     .state('galeria', {
       url: "/galeria",
-      templateUrl: '/galeria.html'
+      templateUrl: '/galeria.html',
+      controller: 'galleryCtrl'
     })
     .state('contato', {
       url: "/contato",
       templateUrl: '/contato.html',
       controller: 'contactCtrl'
-    })   
+    })  
+
+    .state('admin', {
+      url: "/admin",
+      templateUrl: '/admin.html',
+      controller: 'adminCtrl'
+    })  
+    .state('dashboard', {
+      url: "/admin/dashboard",
+      templateUrl: '/dashboard.html',
+      controller: 'dashboardCtrl',
+      params: {
+        obj: null
+      }
+    })  
 });
