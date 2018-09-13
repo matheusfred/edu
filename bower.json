@@ -9,7 +9,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "public/lib"
+    "docs/lib"
   ],
   "dependencies": {
     "font-awesome": "latest",
