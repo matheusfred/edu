@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('aboutCtrl', function($scope, $location, $http){	
+moduleApp.controller('aboutCtrl', function($scope, $location, $http, $firebaseObject){	
 	$scope.callCarouselSobre = function(){
 		$(document).ready(function(){
 			$('.owl-carousel').owlCarousel({
@@ -38,8 +38,5 @@ moduleApp.controller('aboutCtrl', function($scope, $location, $http){
 		});
 	};
 
-	$scope.callCarouselSobre();
-
-
-	$scope.txt1 = ""
+	$scope.callCarouselSobre();  
 });

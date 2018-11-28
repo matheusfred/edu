@@ -6,6 +6,6 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router']);
+var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router', 'firebase']);
 
 moduleApp.run(["$state",function($state){$state.go('index');}]);

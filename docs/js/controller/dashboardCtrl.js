@@ -6,11 +6,15 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('dashboardCtrl', function($scope, $location, $http, $state, $stateParams, $firebaseObject){	
+moduleApp.controller('dashboardCtrl', function($scope, $location, $http, $state, $stateParams, $firebaseArray,$firebaseObject){	
 	checkPath();
 
 	function checkPath(){
 		if($stateParams.obj != null){}			
 		else $state.go('admin');	
 	}	
+
+	$scope.salvarTxt = function(){
+		
+	};
 });
