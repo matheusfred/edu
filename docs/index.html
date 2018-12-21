@@ -27,7 +27,7 @@
 				<div class="col-lg-3 col-md-4 col-sm-3">
 					<div class="row">
 						<div class="col-md-12 col-sm-12">
-							<div class="content_menu">
+							<nav class="content_menu">
 								<img src="img/logo2.png" class="img-fluid mx-auto d-block" alt="">
 								<ul>
 									<li class="menu-item" ui-sref="index" 
@@ -55,7 +55,7 @@
 										<h6>Entre em contato.</h6>
 									</li>
 								</ul>
-							</div>
+							</nav>
 							<div class="col-md-12 col-sm-12 menu_arrow nopadding">
 								<div class="rede-sociais hidden-mobile">
 									<a href="https://www.facebook.com/EduAdriaoTattoo/" title="Facebook" target="blank">
@@ -116,13 +116,18 @@
 					<!-- SOBRE NÓS -->
 				<script type="text/ng-template" id="/sobre.html">
 					<section>
-						<div class="col-md-12 col-sm-12 col-xs-12 pagebox sobre">
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
 							<div class="row">
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-md-6">
 											<h1>O Estúdio</h1>
-											<p ng-model="txt1"></p>	
+											<p ng-model="txt1">
+												Estamos localizado em Jacareí - SP , etúdio especializado em tattoo's modernas, Thin Lines - Black work dentre <a ui-sref="galeria">outras vertentes</a>.
+											</p>
+											<p>
+												Foco e compremetimento de Eduardo Adrião, com o derver em satisfação do cliente, atendimento diferenciado e arte com qualidade.
+											</p>	
 										</div>
 										<div class="owl-carousel col-md-6 vcenter">
 											<img src="img/studio1.jpg" class="item img-fluid rounded" alt="">
@@ -134,11 +139,12 @@
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-md-6 vcenter">
-											<img src="img/details.jpg" class="img-fluid rounded" alt="">
+											<img src="img/edu.png" class="rounded" alt="">
 										</div>					
 										<div class="col-md-6">
 											<h1>Sobre</h1>
-											<p ng-model="txt2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis consequat tempus. Maecenas quis lobortis massa. Morbi mi enim, mattis at sem vitae, fermentum sollicitudin ipsum. Duis interdum elit nibh, eu interdum ante venenatis et. Aliquam erat volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>	
+											<h4>Eduardo Adrião</h4>
+											<p ng-model="txt2"></p>	
 										</div>																				
 									</div>
 								</div>	
@@ -150,17 +156,86 @@
 					<!-- GALERIA -->
 				<script type="text/ng-template" id="/galeria.html">
 					<section>
-						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox gallery-box">
 							<div class="row">
-								<div class="owl-carousel col-md-12 vcenter">
-									<div ng-repeat="pictures in photosblackwork">
-								   		<img ng-src="{{pictures.photo}}" alt="" class="item">		   	
-								    </div>
-								</div>																
+								<div class="col-md-4 sub-items">
+									<a ui-sref="galeria.blackwork">Black work</a>
+								</div>
+
+								<div class="col-md-4 sub-items">
+									<a ui-sref="galeria.colorfull">Color Full</a>
+								</div>	
+
+								<div class="col-md-4 sub-items">
+									<a ui-sref="galeria.comictattoo">Comic's</a>
+								</div>
+
+								<div class="col-md-4 sub-items">
+									<a ui-sref="galeria.dotstattoo">Dots style</a>
+								</div>	
+								
+								<div class="col-md-4 sub-items">
+									<a ui-sref="galeria.fixment">Reformas</a>
+								</div>
+
+								<div class="col-md-4 sub-items">
+									<a ui-sref="galeria.thintattoo"">Thin Tatto</a>
+								</div>		
+
+															
+								<div class="transition col-md-12" ui-view></div>														
 							</div>	
 						</div>				
 					</section>	
 				</script>
+
+				<script type="text/ng-template" id="/blackwork.html">
+					<div class="col-md-12 owl-carousel gallerias vcenter">
+						<div ng-repeat="pictures in photosblackwork">
+					   		<img ng-src="{{pictures}}" alt="" class="item img_align">		   	
+					    </div ng-repeat-end>				
+					</div>    								    						
+				</script>
+
+				<script type="text/ng-template" id="/colorfull.html">
+					<div class="col-md-12 owl-carousel gallerias vcenter">
+						<div ng-repeat="pictures in photoscolor">
+							<img ng-src="{{pictures}}" alt="" class="item img_align">
+						</div>	
+					</div>   		   			    					
+				</script>
+
+				<script type="text/ng-template" id="/comictattoo.html">
+					<div class="col-md-12 owl-carousel gallerias vcenter">
+						<div ng-repeat="pictures in photoscomic">
+							<img ng-src="{{pictures}}" alt="" class="item img_align">
+						</div>	
+					</div>   		   			    					
+				</script>
+
+				<script type="text/ng-template" id="/dotstattoo.html">
+					<div class="col-md-12 owl-carousel gallerias vcenter">
+						<div ng-repeat="pictures in photosdots">
+							<img ng-src="{{pictures}}" alt="" class="item img_align">
+						</div>	
+					</div>   		   			    					
+				</script>
+
+				<script type="text/ng-template" id="/fixment.html">
+					<div class="col-md-12 owl-carousel gallerias vcenter">
+						<div ng-repeat="pictures in photosfix">
+							<img ng-src="{{pictures}}" alt="" class="item img_align">
+						</div>	
+					</div>   		   			    					
+				</script>
+
+				<script type="text/ng-template" id="/thintattoo.html">
+					<div class="col-md-12 owl-carousel gallerias vcenter">
+						<div ng-repeat="pictures in photosthin">
+							<img ng-src="{{pictures}}" alt="" class="item img_align">
+						</div>	
+					</div>   		   			    					
+				</script>																
 
 					<!-- CONTATO -->
 				<script type="text/ng-template" id="/contato.html">
@@ -172,16 +247,11 @@
 										<div class="col-md-12">
 											<div id="map"></div>
 										</div>										
-										<div class="col-md-6">
+										<div class="col-md-12">
 											<i class="fa fa-mobile" aria-hidden="true"></i>
-											<h2>+55 (12) 99727-9679</h2>
-											<p>Celular</p>
+											<h2><a href=" https://api.whatsapp.com/send?phone=5512997279679&text=Olá,%20meu%20amigo!">+55 (12) 99727-9679</a></h2>
+											<p>Whats App</p>
 										</div>							
-										<div class="col-md-6">
-											<i class="fa fa-envelope-o" aria-hidden="true"></i>
-											<h2></h2>
-											<p>Email</p>
-										</div>
 									</div>												
 								</div>
 							</div>	

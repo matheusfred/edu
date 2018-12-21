@@ -18,11 +18,43 @@ moduleApp.config(function($stateProvider) {
       templateUrl: '/sobre.html',
       controller: 'aboutCtrl'
     })  
+
     .state('galeria', {
       url: "/galeria",
       templateUrl: '/galeria.html',
       controller: 'galleryCtrl'
     })
+    .state('galeria.blackwork', {
+        url: '/blackwork',
+        controller: 'galleryCtrl',
+        templateUrl: '/blackwork.html'
+    })  
+    .state('galeria.colorfull', {
+        url: '/colorfull',
+        controller: 'galleryCtrl',
+        templateUrl: '/colorfull.html'
+    })     
+    .state('galeria.comictattoo', {
+        url: '/comictattoo',
+        controller: 'galleryCtrl',
+        templateUrl: '/comictattoo.html'
+    })  
+    .state('galeria.dotstattoo', {
+        url: '/dotstattoo',
+        controller: 'galleryCtrl',
+        templateUrl: '/dotstattoo.html'
+    })
+    .state('galeria.fixment', {
+        url: '/fixment',
+        controller: 'galleryCtrl',
+        templateUrl: '/fixment.html'
+    })  
+    .state('galeria.thintattoo', {
+        url: '/thintattoo',
+        controller: 'galleryCtrl',
+        templateUrl: '/thintattoo.html'
+    })        
+
     .state('contato', {
       url: "/contato",
       templateUrl: '/contato.html',

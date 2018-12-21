@@ -4,12 +4,14 @@ html{
 body{ 
 	background-image: url(../img/bg/dark_mosaico.png);
 	background-repeat: repeat;
+	overflow: hidden;
 }
 
 h1{color:white !important;}
 h5{font-size: 15px !important; margin-bottom: 2px !important;}
 h6{font-size: 12px !important; color:#555555 !important; font-style: italic !important;}
 p{margin: 5px !important;}
+a{text-decoration: none !important;}
 
 .vcenter {display: flex;align-items: center;flex-wrap: wrap;height: 250.500px}
 .nopadding{padding-right: 0px !important;padding-left: 0px !important;}
@@ -52,7 +54,8 @@ ul{list-style: none;padding: 0px;}
 /* PÁGINAS CONFIG CSS */
 
 .pagebox{
-	min-height: 600px;
+	min-height: 610px;
+	max-height: 650px;
 	color:#A3A3A3;
 	padding: 20px;
 	background-color: rgba(34,34,34,0.8);
@@ -61,12 +64,38 @@ ul{list-style: none;padding: 0px;}
 
 .pagebox .fa{
 	font-size: 70px;
-	margin-top: 70px;
+	margin-top: 20px;
 } .contato {text-align: center}
 
 #map{
   height: 250px;
 }
+
+.img_align{height:220px;width:170px;}
+.img_align2{height: 260px; width: 380px;}
+
+/* GALLERY CONFIG */
+
+.gallerias{
+	display: flex;
+	margin-top: 50px;
+}
+
+.gallery-box{
+	height: 410px;
+	background-repeat: no-repeat;
+	background-image: url(../img/tattoos/gallery/gallery-desktop.png);
+}
+
+.sub-items a{
+	color: white;
+	margin-bottom: 10px;
+	font-size:20px;
+	font-weight: 300;
+	text-align: center;
+	cursor:pointer;
+	display: inherit;
+} .sub-items a:hover{color: #343434;}
 
 /* TRANSIÇÃO DE PÁGINAS */
 
