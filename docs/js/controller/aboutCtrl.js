@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('aboutCtrl', function($scope, $location, $http, $firebaseObject){	
+moduleApp.controller('aboutCtrl', function($scope, $location, $http){	
 	$scope.callCarouselSobre = function(){
 		$(document).ready(function(){
 			$('.owl-carousel').owlCarousel({

@@ -8,12 +8,14 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-		<link rel="stylesheet" href="css/script.css" />
-		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
-		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.green.min.css" />
-		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/script.css" />
+		<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+		<link type="text/css" rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
+		<link type="text/css" rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.green.min.css" />
+		<link type="text/css" rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />
+
+		<link type="text/css" rel="stylesheet" href="lib/lightgallery.js/src/css/lightgallery.css" />
 
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVUDHXfEOuwQHetEBOd4azpVzE9Ns5u00">
@@ -26,7 +28,7 @@
 				<!-- NAVBAR -->
 				<div class="col-lg-3 col-md-4 col-sm-3">
 					<div class="row">
-						<div class="col-md-12 col-sm-12">
+						<div class="col-md-12 hidden-mobile">
 							<nav class="content_menu">
 								<img src="img/logo2.png" class="img-fluid mx-auto d-block" alt="">
 								<ul>
@@ -67,6 +69,53 @@
 								</div>								
 							</div>
 						</div>	
+
+						<div class="col-sm-12 nopadding btn-mobile" >
+							<div class="pos-f-t pb-3">
+							    <div class="collapse" id="toggle-BtnMobile">
+							   		<nav class="content_menu content_color">
+										<ul>
+											<li class="menu-item" ui-sref="index" 
+												ng-class="{selected: statusmenu === 'home'}"
+												ng-click="changeStatus('home');callCarouselHome();">
+												<h5>Home</h5>
+												<h6>Retornar para Homepage.</h6>
+											</li>
+											<li class="menu-item" ui-sref="sobre" 
+												ng-class="{selected: statusmenu === 'sobre'}" 
+												ng-click="changeStatus('sobre');">
+												<h5>Sobre</h5>
+												<h6>Faça parte da nossa História</h6>
+											</li>
+											<li class="menu-item" ui-sref="galeria"
+												ng-class="{selected: statusmenu === 'galeria'}" 
+												ng-click="changeStatus('galeria');">
+												<h5>Galeria</h5>
+												<h6>Portfolio profissional.</h6>
+											</li>
+											<li class="menu-item" ui-sref="contato"
+												ng-class="{selected: statusmenu === 'contato'}" 
+												ng-click="changeStatus('contato');initMap();">
+												<h5>Contato</h5>
+												<h6>Entre em contato.</h6>
+											</li>
+										</ul>
+							        </nav>
+							    </div>
+							    <nav class="navbar navbar-dark content_color">
+							    	<img src="img/logo2.png" class="mobile_logo" alt="">
+							    	<button class="navbar-toggler" type="button" 
+							        	data-toggle="collapse" 
+							        	data-target="#toggle-BtnMobile"
+							        	aria-controls="toggle-BtnMobile" 
+							        	aria-expanded="false" 
+							        	aria-label="Toggle navigation">
+							            <span class="navbar-toggler-icon"></span>
+							        </button>
+							    	<img src="img/logo.png" class="mobile_logo" alt="">
+							    </nav>
+							</div>							
+						</div>
 					</div>
 				</div>
 
@@ -75,15 +124,12 @@
 				<div class="transition col-md-8" ui-view></div>
 
 				<!-- SCRIPT LIBS -->
-    		    <script src="lib/firebase/firebase.js"></script>
-    		    <script src="lib/firebase/firebase-app.js"></script>
-    		    <script src="lib/firebase/firebase-auth.js"></script>
-    		    <script src="lib/firebase/firebase-database.js"></script>
+				<script src="lib/lightgallery.js/src/js/lg-utils.js"></script>
+				<script src="lib/lightgallery.js/src/js/lightgallery.js"></script>
 
 				<script src="lib/angular/angular.min.js"></script>
 				<script src="lib/jquery/dist/jquery.min.js"></script>
 				<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>	
-    		    <script src="lib/angularfire/dist/angularfire.min.js"></script>
     		    <script src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
     		    <script src="lib/angular-animate/angular-animate.min.js"></script>
     		    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -126,7 +172,7 @@
 												Estamos localizado em Jacareí - SP , etúdio especializado em tattoo's modernas, Thin Lines - Black work dentre <a ui-sref="galeria">outras vertentes</a>.
 											</p>
 											<p>
-												Foco e compremetimento de Eduardo Adrião, com o derver em satisfação do cliente, atendimento diferenciado e arte com qualidade.
+												Foco e comprometimento de Eduardo Adrião, com o derver em satisfação do cliente, atendimento diferenciado e arte com qualidade.
 											</p>	
 										</div>
 										<div class="owl-carousel col-md-6 vcenter">
@@ -156,7 +202,7 @@
 					<!-- GALERIA -->
 				<script type="text/ng-template" id="/galeria.html">
 					<section>
-						<div class="col-md-12 col-sm-12 col-xs-12 pagebox gallery-box">
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
 							<div class="row">
 								<div class="col-md-4 sub-items">
 									<a ui-sref="galeria.blackwork">Black work</a>
