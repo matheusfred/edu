@@ -53,25 +53,35 @@ moduleApp.config(function($stateProvider) {
         url: '/thintattoo',
         controller: 'galleryCtrl',
         templateUrl: '/thintattoo.html'
-    })        
+    }) 
 
     .state('contato', {
       url: "/contato",
       templateUrl: '/contato.html',
       controller: 'contactCtrl'
     })  
-
+    
     .state('admin', {
       url: "/admin",
       templateUrl: '/admin.html',
       controller: 'adminCtrl'
     })  
     .state('dashboard', {
-      url: "/admin/dashboard",
+      url: "admin/cms",
       templateUrl: '/dashboard.html',
       controller: 'dashboardCtrl',
       params: {
         obj: null
       }
-    })  
+    })
+    .state('dashboard.galeria', {
+        url: '/galeria',
+        templateUrl: '/cmsgallery.html',
+        controller: 'dashboardCtrl'
+    })      
+    .state('dashboard.contato', {
+        url: '/contato',
+        templateUrl: '/cmscontact.html',
+        controller: 'dashboardCtrl'
+    })       
 });

@@ -47,7 +47,7 @@ ul{list-style: none;padding: 0px;}
 
 .menu_arrow{
 	height: 85px;
-	background-image: url(../img/arrow.png);
+	background-image: url(../img/bg/arrow.png);
 }
 
 
@@ -75,6 +75,11 @@ ul{list-style: none;padding: 0px;}
 
 .img_align{height:220px;width:170px;}
 .img_align2{height: 260px; width: 380px;}
+.img_whatsapp{height: 60px; width: 60px;}
+
+.scrap-ok{
+	background-color: green;
+}
 
 /* GALLERY CONFIG */
 
@@ -92,6 +97,7 @@ ul{list-style: none;padding: 0px;}
 	cursor:pointer;
 	display: inherit;
 } .sub-items a:hover{color: #343434;}
+
 
 /* TRANSIÇÃO DE PÁGINAS */
 
@@ -114,7 +120,7 @@ ul{list-style: none;padding: 0px;}
 
 /****** TABLET ******/
 @media only screen and (max-width: 1024px) {
-	.menu_arrow{height: 85px;background-image: url(../img/arrow-tablet.png);}	
+	.menu_arrow{height: 85px;background-image: url(../img/bg/arrow-tablet.png);}	
 }	
 
 @media only screen and (max-width: 768px) {
@@ -129,5 +135,6 @@ ul{list-style: none;padding: 0px;}
 	.content_menu{color:rgba(255,255,255,0.3);padding: 24px 24px 0.1px 24px;border: none}
 	.mobile_logo{height: 60px; width: 60px;}
 
+	.pagebox{margin-bottom: 20px}
 	.content_color{background-color: rgba(34,34,34,0.8);}
 }	

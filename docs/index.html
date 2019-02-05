@@ -17,6 +17,12 @@
 
 		<link type="text/css" rel="stylesheet" href="lib/lightgallery.js/src/css/lightgallery.css" />
 
+		
+		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>         
+		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>                         
+
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVUDHXfEOuwQHetEBOd4azpVzE9Ns5u00">
 		</script>		
@@ -147,16 +153,7 @@
 				<!-- T E M P L A T E S / L A Y O U T S -->
 					<!-- HOME -->
 				<script type="text/ng-template" id="/home.html">
-					<section>
-						<div class="row">
-							<div class="col-md-1"></div>
-							<div class="owl-carousel col-lg-10 col-md-10 col-sm-12 vcenter adjust_margin">
-								<img src="img/tattoos/tattoo1.png" class="item" alt="">
-								<img src="img/tattoos/tattoo2.png" class="item" alt="">	
-								<img src="img/tattoos/tattoo3.png" class="item" alt="">	
-							</div>									
-						</div>			
-					</section>	
+
 				</script>
 
 					<!-- SOBRE NÓS -->
@@ -169,15 +166,16 @@
 										<div class="col-md-6">
 											<h1>O Estúdio</h1>
 											<p ng-model="txt1">
-												Estamos localizado em Jacareí - SP , etúdio especializado em tattoo's modernas, Thin Lines - Black work dentre <a ui-sref="galeria">outras vertentes</a>.
+												Localizado em Jacareí - SP , etúdio especializado em tattoo's modernas, Thin Lines - Black work dentre <a ui-sref="galeria">outras vertentes</a>.
 											</p>
 											<p>
-												Foco e comprometimento de Eduardo Adrião, com o derver em satisfação do cliente, atendimento diferenciado e arte com qualidade.
+												Foco e comprometimento de Eduardo Adrião, com o dever em satisfação do cliente, atendimento diferenciado e arte com qualidade.
 											</p>	
 										</div>
 										<div class="owl-carousel col-md-6 vcenter">
-											<img src="img/studio1.jpg" class="item img-fluid rounded" alt="">
-											<img src="img/studio2.jpg" class="item img-fluid rounded" alt="">
+											<img src="img/abt/studio1.jpeg" class="item img-fluid rounded" alt="">
+											<img src="img/abt/studio3.jpeg" class="item img-fluid rounded" alt="">
+											<img src="img/abt/studio5.jpeg" class="item img-fluid rounded" alt="">
 										</div>
 									</div>
 								</div>
@@ -185,7 +183,7 @@
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-md-6 vcenter">
-											<img src="img/edu.png" class="rounded" alt="">
+											<img src="img/abt/edu.png" class="rounded" alt="">
 										</div>					
 										<div class="col-md-6">
 											<h1>Sobre</h1>
@@ -204,31 +202,29 @@
 					<section>
 						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
 							<div class="row">
-								<div class="col-md-4 sub-items">
+								<div class="col-md-2 sub-items">
 									<a ui-sref="galeria.blackwork">Black work</a>
 								</div>
 
-								<div class="col-md-4 sub-items">
+								<div class="col-md-2 sub-items">
 									<a ui-sref="galeria.colorfull">Color Full</a>
 								</div>	
 
-								<div class="col-md-4 sub-items">
+								<div class="col-md-2 sub-items">
 									<a ui-sref="galeria.comictattoo">Comic's</a>
 								</div>
 
-								<div class="col-md-4 sub-items">
+								<div class="col-md-2 sub-items">
 									<a ui-sref="galeria.dotstattoo">Dots style</a>
 								</div>	
 								
-								<div class="col-md-4 sub-items">
-									<a ui-sref="galeria.fixment">Reformas</a>
-								</div>
-
-								<div class="col-md-4 sub-items">
+								<div class="col-md-2 sub-items">
 									<a ui-sref="galeria.thintattoo"">Thin Tatto</a>
-								</div>		
+								</div>	
 
-															
+								<div class="col-md-2 sub-items">
+									<a ui-sref="galeria.fixment">Reformas</a>
+								</div>							
 								<div class="transition col-md-12" ui-view></div>														
 							</div>	
 						</div>				
@@ -290,18 +286,43 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="row">
-										<div class="col-md-12">
+			                  			<div class="col-md-6">
+											<form>
+												<div class="form-group col-sm-12">
+												    <label for="email-area">Email address</label>
+												    <input type="email" class="form-control" id="email-area" placeholder="name@example.com" ng-model="value.email">
+												</div>
+
+												<div class="form-group col-sm-12">
+												    <textarea class="form-control" id="text-area" rows="3" ng-model="value.description"></textarea>
+												</div>
+
+											    <div class="col-md-12" id="button-scrap">
+											        <button class="btn" color="primary" type="submit" 
+											        ng-click="createScrap(value);">Enviar</button>
+											    </div>    									 						
+											</form>
+							            </div>											
+										<div class="col-md-6">
 											<div id="map"></div>
-										</div>										
-										<div class="col-md-12">
-											<i class="fa fa-mobile" aria-hidden="true"></i>
-											<h2><a href=" https://api.whatsapp.com/send?phone=5512997279679&text=Olá,%20meu%20amigo!">+55 (12) 99727-9679</a></h2>
-											<p>Whats App</p>
-										</div>							
-									</div>												
+										</div>
+			                     	</div>											
 								</div>
 							</div>	
-						</div>			
+						</div>	
+						<div class="col-md-12 col-sm-12 col-xs-12 pagebox contato mt-4 ">
+	 						<div class="row">
+								<div class="col-md-12">
+									<img src="img/bg/whatsapp.png" alt="whats app" class="img_whatsapp">
+									<div class="mt-4">
+										<h2>
+											<a href=" https://api.whatsapp.com/send?phone=5512997279679&text=Olá,%20meu%20amigo!">
+											+55 (12) 99727-9679</a>
+										</h2>
+									</div>	
+								</div>																	
+							</div>
+						</div>		
 					</section>	
 				</script>	
 
@@ -309,41 +330,60 @@
                   <!-- ADMIN PAGE -->
                 <script type="text/ng-template" id="/admin.html">
                   <section>
-                    <div class="col-md-12 col-sm-12 col-xs-12 pagebox">
-                      	<div class="row">
-		                    <form class="form-inline col-md-12">
-		                        <div class="form-group col-md-4">
+	                <div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+	                  	<div class="row">
+		                    <form class="col-md-12">
+		                        <div class="col-sm-12 p-1">
 		                            <label for="staticEmail2" class="sr-only">Email</label>
 		                            <input type="text" class="form-control" id="email" placeholder="Email" ng-model="emailAuth">
 		                        </div>
-		                        <div class="form-group col-md-4">
+
+		                        <div class="col-sm-12 p-1">
 		                            <label for="inputPassword2" class="sr-only">Password</label>
 		                            <input type="password" class="form-control" id="senha" placeholder="Password" ng-model="senhaAuth">
 		                        </div>
-		                        <button type="submit" class="btn btn-primary col-md-4" ng-click="logarAdmin();">Login</button>
+		                        <button type="submit" class="btn col-sm-4 justify-content-center" ng-click="logarAdmin();">Login</button>
 		                    </form>                  
-                      	</div>  
-                    </div>      
+	                  	</div>  
+	                </div>      
                   </section>  
                 </script> 
 
                           <!-- DASHBORAD PAGE -->
                 <script type="text/ng-template" id="/dashboard.html">
                   <section>
-                    <div class="col-md-12 col-sm-12 col-xs-12 pagebox">
-                      <div class="row"> 
-                			<div class="col-lg-6">
-                				<h2>About</h2>
-			                    <form class="form-inline col-lg-12">
-			                        <input type="text" class="form-control col-lg-12" placeholder="o estúdio" ng-model="about.text">
-			                        <button type="submit" class="btn btn-primary col-lg-12">Salvar</button>
+					<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
+				        <div class="row">
+							<div class="col-md-6 sub-items">
+								<a ui-sref="dashboard.galeria">Dashboard Galeria</a>
+							</div>
 
-			                    </form> 
-                			</div>                       
-                      </div>  
+							<div class="col-md-6 sub-items">
+								<a ui-sref="dashboard.contato">Dashboard Depoimentos</a>
+							</div>	
+						
+							<div class="transition col-md-8" ui-view></div>
+				        </div>  
                     </div>      
                   </section>  
                 </script>
+
+
+				<script type="text/ng-template" id="/cmsgallery.html">
+					<div class="row">
+						<div class="col-md-12">
+							<h1>TESTE GALERIA</h1>
+						</div>
+					</div>						    						
+				</script>
+
+				<script type="text/ng-template" id="/cmscontact.html">
+					<div class="row">
+						<div class="col-md-12">
+							<h1>TESTE CONTATO</h1>
+						</div>
+					</div>		   			    					
+				</script>
 
 			</div>
 		</div>

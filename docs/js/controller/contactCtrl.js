@@ -7,6 +7,19 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('contactCtrl', function($scope, $location, $http){
+    const firestore = firebase.firestore();
+    const settings = {timestampsInSnapshots: true};
+    firestore.settings(settings);
+
+  $scope.createScrap = function(value){
+      firestore.collection('scraptmsg').add({
+        email: value.email,
+        descripition: value.description
+      });
+
+        var div = document.getElementById("button-scrap");
+        div.classList.add("scrap-ok");
+  };
 
   $scope.initMap = function() {
       var company = {lat: -23.302953,  lng: -45.973717};

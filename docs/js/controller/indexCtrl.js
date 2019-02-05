@@ -8,16 +8,13 @@
 /* ****************************************************** */
 moduleApp.controller('indexCtrl', function($scope, $location, $http){
 
-  // var config = {
-  //   apiKey: "AIzaSyA_Pi0skdiVRJb3pDGqC-ADC7SPCuWtWv0",
-  //   authDomain: "edutatto-1530661509405.firebaseapp.com",
-  //   databaseURL: "https://edutatto-1530661509405.firebaseio.com",
-  //   projectId: "edutatto-1530661509405",
-  //   storageBucket: "edutatto-1530661509405.appspot.com",
-  //   messagingSenderId: "648067521116"
-  // };
+  const config = {
+    apiKey: "AIzaSyA_Pi0skdiVRJb3pDGqC-ADC7SPCuWtWv0",
+    authDomain: "edutatto-1530661509405.firebaseapp.com",
+    projectId: "edutatto-1530661509405"
+  };
 
-  // firebase.initializeApp(config);	
+  firebase.initializeApp(config);
 
 	var newValue;
 	$scope.statusmenu = 'home';	
