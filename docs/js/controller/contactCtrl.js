@@ -17,8 +17,10 @@ moduleApp.controller('contactCtrl', function($scope, $location, $http){
         descripition: value.description
       });
 
-        var div = document.getElementById("button-scrap");
-        div.classList.add("scrap-ok");
+        var div = document.getElementById("sucess_msg");
+        div.classList.add("sucess_msg");
+
+        window.setTimeout(function() {div.classList.remove("sucess_msg");}, 3000);
   };
 
   $scope.initMap = function() {

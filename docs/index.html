@@ -125,7 +125,6 @@
 					</div>
 				</div>
 
-				
 				<!-- VIEW'S -->
 				<div class="transition col-md-8" ui-view></div>
 
@@ -150,13 +149,14 @@
                 <script src="js/controller/galleryCtrl.js"></script>  
                 <script src="js/controller/dashboardCtrl.js"></script>  
 
-				<!-- T E M P L A T E S / L A Y O U T S -->
-					<!-- HOME -->
+			<!-- T E M P L A T E S / L A Y O U T S -->
+				
+				<!-- HOME -->
 				<script type="text/ng-template" id="/home.html">
 
 				</script>
 
-					<!-- SOBRE NÓS -->
+				<!-- SOBRE NÓS -->
 				<script type="text/ng-template" id="/sobre.html">
 					<section>
 						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
@@ -172,7 +172,7 @@
 												Foco e comprometimento de Eduardo Adrião, com o dever em satisfação do cliente, atendimento diferenciado e arte com qualidade.
 											</p>	
 										</div>
-										<div class="owl-carousel col-md-6 vcenter">
+										<div class="owl-carousel col-md-6 mt-4 vcenter hidden-mobile">
 											<img src="img/abt/studio1.jpeg" class="item img-fluid rounded" alt="">
 											<img src="img/abt/studio3.jpeg" class="item img-fluid rounded" alt="">
 											<img src="img/abt/studio5.jpeg" class="item img-fluid rounded" alt="">
@@ -182,8 +182,8 @@
 
 								<div class="col-md-12">
 									<div class="row">
-										<div class="col-md-6 vcenter">
-											<img src="img/abt/edu.png" class="rounded" alt="">
+										<div class="col-md-6">
+											<img src="img/abt/edu.png" class="rounded img-fluid" alt="">
 										</div>					
 										<div class="col-md-6">
 											<h1>Sobre</h1>
@@ -193,38 +193,43 @@
 									</div>
 								</div>	
 							</div>								
-						</div>				
+						</div>					
 					</section>	
 				</script>
 
-					<!-- GALERIA -->
+				<!-- GALERIA -->
 				<script type="text/ng-template" id="/galeria.html">
 					<section>
 						<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
 							<div class="row">
-								<div class="col-md-2 sub-items">
-									<a ui-sref="galeria.blackwork">Black work</a>
+								<div class="col-md-12 grey hidden-mobile">
+									<div class="row">
+										<div class="col-md-2">
+											<a class="btn btn-dark" ui-sref="galeria.blackwork">Black work</a>
+										</div>
+
+										<div class="col-md-2">
+											<a class="btn btn-dark" ui-sref="galeria.colorfull">Color Full</a>
+										</div>	
+
+										<div class="col-md-2">
+											<a class="btn btn-dark" ui-sref="galeria.comictattoo">Comic's</a>
+										</div>
+
+										<div class="col-md-2">
+											<a class="btn btn-dark" ui-sref="galeria.dotstattoo">Dots style</a>
+										</div>	
+										
+										<div class="col-md-2">
+											<a class="btn btn-dark" ui-sref="galeria.thintattoo"">Thin Tatto</a>
+										</div>	
+
+										<div class="col-md-2">
+											<a class="btn btn-dark" ui-sref="galeria.fixment">Reformas</a>
+										</div>
+									</div>
 								</div>
-
-								<div class="col-md-2 sub-items">
-									<a ui-sref="galeria.colorfull">Color Full</a>
-								</div>	
-
-								<div class="col-md-2 sub-items">
-									<a ui-sref="galeria.comictattoo">Comic's</a>
-								</div>
-
-								<div class="col-md-2 sub-items">
-									<a ui-sref="galeria.dotstattoo">Dots style</a>
-								</div>	
-								
-								<div class="col-md-2 sub-items">
-									<a ui-sref="galeria.thintattoo"">Thin Tatto</a>
-								</div>	
-
-								<div class="col-md-2 sub-items">
-									<a ui-sref="galeria.fixment">Reformas</a>
-								</div>							
+																
 								<div class="transition col-md-12" ui-view></div>														
 							</div>	
 						</div>				
@@ -279,7 +284,7 @@
 					</div>   		   			    					
 				</script>																
 
-					<!-- CONTATO -->
+				<!-- CONTATO -->
 				<script type="text/ng-template" id="/contato.html">
 					<section>
 						<div class="col-md-12 col-sm-12 col-xs-12 pagebox contato">
@@ -289,45 +294,33 @@
 			                  			<div class="col-md-6">
 											<form>
 												<div class="form-group col-sm-12">
-												    <label for="email-area">Email address</label>
+												    <label for="email-area">Email</label>
 												    <input type="email" class="form-control" id="email-area" placeholder="name@example.com" ng-model="value.email">
 												</div>
 
 												<div class="form-group col-sm-12">
+													<label for="desc-area">Descrição</label>
 												    <textarea class="form-control" id="text-area" rows="3" ng-model="value.description"></textarea>
 												</div>
 
-											    <div class="col-md-12" id="button-scrap">
-											        <button class="btn" color="primary" type="submit" 
-											        ng-click="createScrap(value);">Enviar</button>
+											    <div class="col-md-12">
+											        <a class="btn btn btn-success btn-lg" href="https://api.whatsapp.com/send?phone=5512997279679&text=Olá,%20meu%20amigo!" target="blank">Whats App</a>
+											        <button class="btn btn-primary btn-lg" type="submit" ng-click="createScrap(value);">Enviar</button>
 											    </div>    									 						
 											</form>
 							            </div>											
-										<div class="col-md-6">
+										<div class="col-md-6 mt-4">
 											<div id="map"></div>
 										</div>
 			                     	</div>											
 								</div>
 							</div>	
-						</div>	
-						<div class="col-md-12 col-sm-12 col-xs-12 pagebox contato mt-4 ">
-	 						<div class="row">
-								<div class="col-md-12">
-									<img src="img/bg/whatsapp.png" alt="whats app" class="img_whatsapp">
-									<div class="mt-4">
-										<h2>
-											<a href=" https://api.whatsapp.com/send?phone=5512997279679&text=Olá,%20meu%20amigo!">
-											+55 (12) 99727-9679</a>
-										</h2>
-									</div>	
-								</div>																	
-							</div>
-						</div>		
+						</div>				
 					</section>	
 				</script>	
 
 
-                  <!-- ADMIN PAGE -->
+                <!-- ADMIN PAGE -->
                 <script type="text/ng-template" id="/admin.html">
                   <section>
 	                <div class="col-md-12 col-sm-12 col-xs-12 pagebox">
@@ -335,40 +328,36 @@
 		                    <form class="col-md-12">
 		                        <div class="col-sm-12 p-1">
 		                            <label for="staticEmail2" class="sr-only">Email</label>
-		                            <input type="text" class="form-control" id="email" placeholder="Email" ng-model="emailAuth">
-		                        </div>
+		                            <input type="text" class="form-control mb-3" id="email" placeholder="Email" ng-model="emailAuth">
 
-		                        <div class="col-sm-12 p-1">
 		                            <label for="inputPassword2" class="sr-only">Password</label>
 		                            <input type="password" class="form-control" id="senha" placeholder="Password" ng-model="senhaAuth">
+		                        	<button class="btn btn-primary btn-lg mt-3" type="submit" ng-click="logarAdmin();">Login</button>
 		                        </div>
-		                        <button type="submit" class="btn col-sm-4 justify-content-center" ng-click="logarAdmin();">Login</button>
 		                    </form>                  
 	                  	</div>  
-	                </div>      
+	                </div>  
                   </section>  
                 </script> 
 
-                          <!-- DASHBORAD PAGE -->
+                <!-- DASHBORAD PAGE -->
                 <script type="text/ng-template" id="/dashboard.html">
                   <section>
 					<div class="col-md-12 col-sm-12 col-xs-12 pagebox">
 				        <div class="row">
 							<div class="col-md-6 sub-items">
-								<a ui-sref="dashboard.galeria">Dashboard Galeria</a>
+								<a class="btn btn-dark btn-lg" ui-sref="dashboard.galeria">Dashboard Galeria</a>
 							</div>
 
 							<div class="col-md-6 sub-items">
-								<a ui-sref="dashboard.contato">Dashboard Depoimentos</a>
+								<a class="btn btn-dark btn-lg" ui-sref="dashboard.contato">Dashboard Depoimentos</a>
 							</div>	
 						
 							<div class="transition col-md-8" ui-view></div>
 				        </div>  
                     </div>      
-                  </section>  
+                  </section>  	
                 </script>
-
-
 				<script type="text/ng-template" id="/cmsgallery.html">
 					<div class="row">
 						<div class="col-md-12">
@@ -376,7 +365,6 @@
 						</div>
 					</div>						    						
 				</script>
-
 				<script type="text/ng-template" id="/cmscontact.html">
 					<div class="row">
 						<div class="col-md-12">
@@ -386,6 +374,10 @@
 				</script>
 
 			</div>
+		</div>
+
+		<div class="col-md-12 msg_content" id="sucess_msg">
+			Enviado com sucesso, veja <a href="https://www.instagram.com/eduadriaotattoo/" title="Instagram" target="blank">novidades</a>! 
 		</div>
 	</body>
 </html>
