@@ -18,8 +18,7 @@ moduleApp.controller('dashboardCtrl', function($scope, $location, $http, $state,
 	};	    
 
 	$scope.loadScraps = function(){
-		firestore.collection('scraptmsg').get({
-		});	
+		firestore.collection('scraptmsg').get({});	
 	};	
 
 });
